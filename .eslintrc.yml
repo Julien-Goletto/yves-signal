@@ -21,10 +21,10 @@ plugins:
   - promise
   - import
   - unicorn
-rules: 
+rules:
   linebreak-style:
-      - error
-      - unix
+    - error
+    - unix
   semi:
     - error
     - always
