@@ -1,0 +1,31 @@
+Parler de ses technos c’est bien (https://www.linkedin.com/posts/julien-goletto_the-state-of-js-2022-activity-7059829036474081280-Kb_n?utm_source=share&utm_medium=member_desktop), l’illustrer c’est encore mieux !
+
+La série d’articles qui vont se succéder va principalement parler de React 18, Next 13, Vercel et TailwindCSS et même de ChatGPT.
+Le prototype d’illustration sur lequel je vais m’appuyer est le suivant :
+https://how-is-this-not-illegal-sooty.vercel.app/
+[Inspiré par les idées originales de Dan Abramov et Guillermo Rauch](https://twitter.com/rauchg/status/1653448770766663680?s=20)
+
+On démarre cette série aujourd’hui avec une explication rapide de l’état de l’art concernant les différents modes de génération de pages web.
+
+Pour améliorer autant que possible l’expérience utilisateurs, les frameworks frontend modernes permettent d’avoir recours à différents modes de rendu : le CSR (Client Side Rendering, penser SPA), le SSR (Server Side Rendering penser monolithique), le SSG (Static Site Generation page statique générée au build) et l’ISR (Incremental Static Regeneration, l’actualisation d’une page statique avec des données fraîches).
+Un seul et unique objectif : améliorer l’expérience utilisateur en écourtant les TTFB (Time To First Byte), FP (First Paint), FCP (First Contentfull Paint) et LCP (Largest Contentful Paint).
+
+Pour les modes de rendu côté serveur, Next 12 pratiquait déjà l’hydratation pour ses modes de rendus Server Side, mais d’une façon “détournée” : dans un premier temps le serveur Next envoie au client une page HTML statique, puis dans un second temps avec un bon morceau de JSON, ajoute toute l’interactivité. Ce faisant, on essaie d’avoir le meilleur des rendus côté serveur et client, en évitant autant que possible l’attente devant une page vide et l’attente devant un “loader” hell, cache misère des SPAs.
+
+Avec l’avènement des server components de React 18, la génération server side s’enrichit d’un nouvel outil permettant d’oublier le “bricolage” de NextJS 12 avec une vraie solution native apportée par la dernière version. Les server components permettent de générer un morceau d’interface directement côté server. Les impacts sont nombreux et bénéfiques : on réduit la taille du bundle JS, on s’affranchit d’envoyer au client des dépendances lourdes, on peut créer un templating optimal bénéficier du streaming de composants, on peut fetcher directement les données nécessaires à la construction de notre composant au sein du composant lui-même, on peut utiliser des données sensibles sans les exposer au client…
+ 
+À nous, développeur frontend, de définir quels morceaux de notre UI vont être des server components dont le HTML est généré par le server (et qui sont de fait statiques), et quels autres morceaux vont être des client components, des composants “réactifs”. 
+
+Pour se décider :
+
+- Mon composant utilise des states ou des mécanisme liés au cycle de vie du composant → client
+- Mon composant utilise l’API du navigateur → client
+- Mon composant utilise des écouteurs d’événements → client
+- Mon composant fetch des données depuis une API → server
+- Mon composant utilise des mécaniques de backend → server
+- Mon composant manipule de lourdes dépendances → server
+- Mon composant utilise des données sensible qu’il vaudrait mieux éviter d’amener côté client → server
+
+Une ressource pour aller plus loin :
+
+- [Présentation du nouveau paradigme introduit par React 18 et Next13](https://nextjs.org/docs/getting-started/react-essentials)

@@ -1,0 +1,43 @@
+Trouver sa stack technique dans un écosystème aussi changeant que le développement web est un exercice relativement casse-gueule.
+Faire ses choix, prendre parti voire se positionner a des impacts non-négligeables : architectures, performances, perspectives d’évolutions, dette technique, employabilité.
+
+Difficile de prendre le recul nécessaire pour, à un niveau individuel, faire les meilleurs choix. C’est pourquoi les radiographies annuelles sont d’excellents phares dans la nuit. La représentativité du panel de développeurs répondants à ces grands sondages les rendent finalement incontournable. Dans le grand bain des analyses de marché, parfois au doigt mouillé, il y a [State of JS](https://2022.stateofjs.com/en-US/), dont la lecture (même pour un junior) est très instructive.
+
+Laissez-moi vous partager ma stack sur cette première moitié de 2023 !
+
+## Stack Front-end
+
+Langages de programmation : 
+- Typescript : Sans aucune surprise, ma transition de JS à TS s’est faite en juillet 2022. Depuis je n’ai plus produit une seule ligne de JavasScript manuellement, et franchement aucun regret. L’effort de transition est minime, et avec le bon mindset c’est franchement indolore. Tout ça pour un code plus qualitatif, des erreurs claires, une documentation dynamique qui facilite le travail en équipe. Aucune raison de s’en passer.
+
+CSS :
+- TailwindCSS : Et oui, j’étais très réticent à l’idée d’utiliser des lib ou des frameworks CSS. Pourtant l’approche des classes fonctionnelles de Tailwind m’a définitivement convaincue. Le gain de productivité est monstrueux. Je n’échappe pas à du CSS fait main ou une bonne customisation pour des composants délicats, mais globalement c’est difficile de m’en passer.
+
+Librarie / Framework Front-end :
+- React: Indéboulonnable, ça reste la librairie la plus utilisée. Et honnêtement les nouvelles fonctionnalités développées avec React 18 (server components en tête) sont très enthousiasmantes. Mais cela fait quelques temps que j’ai délaissé le React vanilla pour privilégier un “vrai” framework.
+- Next: Ce framework c’est Next ! Que ce soit pour le concept d’hydratation, les différents modes de rendus (SSR / SSG / ISR), les fonctionnalités avancées de routing et maintenant les routes API (oui Next est un framework fullstack), Next est devenu un de mes outils de travail les plus importants.
+
+Autres indispensables :
+- Tests : On va aller vite pour cette catégorie, je pense qu’il n’y a pas vraiment débat, j’utilise toujours Jest, mais également Vitest et Testing Library
+- Cache côté client : Mon coeur balance entre SWR et Tanstack Query, mais c’est impossible de revenir en arrière côté UX tant les mutations de cache permettent de fluidifier l’utilisation des apps.
+- Zod pour le contrôle de tous les entrants fetchés sur des APis externes, indispensable, tout simplement.
+
+## Stack Back-end
+
+Langages de programmation : 
+- Typescript : Quelle surprise 😀
+- PostgreSQL : Encore et toujours pas remis du choc “Oh mais on peut faire de la vraie programmation, pas juste des SELECT * FROM table ?”. Triggers, fonctions complexes itératives, vues, index, je prends toujours un plaisir certain à manipuler mes données côté base.
+
+Framework Back-end / CMS headless :
+- Express : Toujours un amour fou pour cette architecture back-end avec laquelle j’ai tant appris. Mon premier amour (à la base je me prédestinais à un poste de dev back-end), difficile de l’oublier.
+- Fastify : Une approche sensiblement plus moderne à laquelle j’ai eu un peu de mal à me faire (Express, encore et toujours) mais sur laquelle repose entièrement l’API de Cinévoraces. Les meilleures performances  via notamment l’encapsulation des plugins nous a motivé à migrer, malgré une user base bien moins fournie.
+- Koa / Strapi : Pas le temps de développer un backend pour un projet relativement simple ? Pas de problème avec Strapi. L’usage et la configuration de base sont super simples, mais dévier et vouloir adapter l’outil demande un petit temps d’adaptation.
+
+Admin Sys. / Devops, pour se passer de PaS :
+- Un bon vieux VPS de chez OVH, un peu d’huile de coude pour la sécurisation et un petit script shell maison pour créer des backups glissants (assets et db) en local et dans le cloud et on se met pas trop mal.
+- Docker : Incontournable. Attention à l’apparente simplicité de prise en main, la courbe d’apprentissage est vraiment (vraiment) piègeuse.
+
+Autres indispensables :
+- Tests : La versatilité des frameworks de tests n’est pas à prouver, encore une fois j’utilise Jest ou Vitest
+- Un générateur automatique de documentation pour être très gentil avec le dev front qui va devoir utiliser mes endpoints, comme Swagger Doc.
+- Prisma ? J’ai longtemps été borné sur un refus catégorique d’utiliser un ORM. Prisma m’a pas mal séduit avec son approche déclarative très simple à base de schéma, les migrations plutôt indolore et surtout le typage natif de nos données. Attention cependant à la récupération d’une base existante sous Prisma, on s’y est pas mal cassé les dents.
