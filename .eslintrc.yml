@@ -114,3 +114,5 @@ rules:
   prettier/prettier: 0
   i18n-text/no-en: 0
   import/no-duplicates: error
+
+  import/no-unresolved: off # TypeScript already handles this
