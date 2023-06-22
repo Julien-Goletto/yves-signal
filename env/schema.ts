@@ -3,6 +3,7 @@ import { z } from'zod';
 // Inspired by https://create.t3.gg/
 export const serverSchema = z.object({
   TOTO: z.string(),
+  DATABASE_URL: z.string(),
 });
 
 export const clientSchema = z.object({
@@ -24,6 +25,7 @@ type ClientSchema = {
 
 export const serverEnvironment: ServerSchema = {
   TOTO: process.env.TOTO,
+  DATABASE_URL: process.env.DATABASE_URL,
 };
 export const clientEnvironment: ClientSchema = {
   NEXT_PUBLIC_TATA: process.env.NEXT_PUBLIC_TATA,

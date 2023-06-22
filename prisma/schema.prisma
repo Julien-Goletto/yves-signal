@@ -9,3 +9,39 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Category {
+  id              String      @default(cuid()) @id
+  name            String
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  articles        Article[]
+  nodes           Node[]
+}
+
+model Article {
+  id              String      @default(cuid()) @id
+  title           String
+  content_path    String
+  slug            String
+  is_published    Boolean     @default(false)
+  publishing_date DateTime
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  category        Category    @relation(fields: [categoryId], references: [id])
+  categoryId      String
+  node            Node[]
+}
+
+model Node {
+  id              String      @default(cuid()) @id
+  title           String
+  feedback        String
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  category        Category    @relation(fields: [categoryId], references: [id])
+  categoryId      String
+  article         Article[]
+  articleId       String
+}
+
