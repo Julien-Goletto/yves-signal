@@ -10,7 +10,9 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
-      <body className={"flex min-h-screen flex-col items-center justify-between p-24"}>
+      <body 
+        className="container min-h-screen grow mx-auto px-3 py-8 lg:py-16 flex flex-col items-center gap-6 xl:px-6 md:gap-8 lg:gap-10 xl:gap-14 bg-primary-dark text-white"
+        >
         <Header/>
           {children}
         <Footer/>
