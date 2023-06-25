@@ -14,7 +14,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         className="min-h-screen grow flex flex-col items-center gap-6 md:gap-8 lg:gap-10 xl:gap-14 bg-primary-dark text-white"
         >
         <Header/>
-        <main className='container grow mx-auto px-3 py-8 lg:py-16 flex flex-col items-center gap-6 xl:px-6 md:gap-8 lg:gap-10 xl:gap-14'>
+        <main className='container grow mt-20 mx-auto px-3 py-8 lg:py-16 flex flex-col items-center gap-6 xl:px-6 md:gap-8 lg:gap-10 xl:gap-14'>
           {children}
         </main>
         <Footer/>

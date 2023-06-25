@@ -8,9 +8,9 @@ const links = [
   { name: "Présentation", href: "/presentation"},
 ];
 
-export const MobileNavigationContent = () => {
+export const MobileNavigation = () => {
   return (
-    <nav className='bg-lime-600 absolute inset-0 min-h-screen flex lg:hidden flex-col'>
+    <nav className='lg:hidden absolute top-20 inset-0 flex flex-col items-center gap-8'>
       {
         links.map((link) => (
           <Link href={link.href} key={link.href}>{link.name}</Link>
@@ -22,7 +22,7 @@ export const MobileNavigationContent = () => {
 
 export const DesktopNavigation = () => {
   return (
-    <nav className='hidden lg:flex'>
+    <nav className='hidden lg:flex gap-12 items-center text-2xl'>
       {
         links.map((link) => (
         <Link href={link.href} key={link.href}>{link.name}</Link>
