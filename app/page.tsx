@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { getArticleSlugList, getArticleMetaBySlug } from '@/utils';
+import { AnimatedBlob } from './components/Backgrounds/animated-blob';
 
 const Home = async() => {
   const articlesSlugList = await getArticleSlugList();
@@ -15,9 +16,12 @@ const Home = async() => {
   ));
 
   return (
-    <main>
-      <section>{articleCards}</section>
-    </main>
+    <>
+      <section id="hero" className='container mx-auto'>
+        <AnimatedBlob />
+      </section>
+      <section id="last-articles">{articleCards}</section>
+    </>
   );
 };
 
