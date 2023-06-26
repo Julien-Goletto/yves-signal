@@ -10,7 +10,7 @@ export const Logo = () => {
         alt="Logo-Homepage Link"
         width={200}
         height={200}
-        className='w-16 h-16 border border-white rounded-full'
+        className='w-16 h-16 border-2 border-white rounded-full'
       />
     </Link>
   );

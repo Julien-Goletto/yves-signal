@@ -9,7 +9,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleBurgerMenu = () => setIsOpen(!isOpen);
 
-  const headerStyle = 'fixed backdrop-blur-xl h-20 w-full px-4 py-2.5 flex items-start justify-between';
+  const headerStyle = 'fixed z-50 backdrop-blur-xl h-20 w-full px-4 py-2.5 flex items-start justify-between';
 
   return(
     <header 

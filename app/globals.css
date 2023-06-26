@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-container {
+    @apply container w-full mx-auto px-3 py-8 flex flex-col items-center gap-4;
+  }
+  h1 {
+    @apply text-5xl font-bold;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl font-extrabold;
+  }
+  h4 { 
+    @apply text-xl;
+  }
+  .accent {
+    @apply text-lg font-semibold;
+  }
+  .secondary {
+    @apply text-sm;
+  }
+  .tertiary {
+    @apply text-xs;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { getArticleSlugList, getArticleMetaBySlug } from '@/utils';
-import { AnimatedBlob } from './components/Backgrounds/animated-blob';
+import { HeroSection } from './components/HomeComponents/hero';
 
 const Home = async() => {
   const articlesSlugList = await getArticleSlugList();
@@ -17,9 +17,7 @@ const Home = async() => {
 
   return (
     <>
-      <section id="hero" className='container mx-auto'>
-        <AnimatedBlob />
-      </section>
+      <HeroSection />
       <section id="last-articles">{articleCards}</section>
     </>
   );
