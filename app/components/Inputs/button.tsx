@@ -33,10 +33,19 @@ const ButtonStyle = {
     focus:ring-secondary-medium/10
     hover:ring-secondary-medium/10
   `,
+  logo: `
+    w-10 h-10 p-1.5 border border-white rounded-full bg-primary-dark
+    flex items-center justify-center
+    shadow-xl shadow-white/20
+    focus:outline-none focus:ring-4 focus:ring-offset-0 focus:scale-105 focus:ring-white/10
+    hover:outline-none hover:ring-4 hover:ring-offset-0 hover:scale-105 hover:ring-white/10
+    transition duration-150 hover:ease-out 
+    disabled:opacity-60
+    `,
 };
 
 type ButtonProperties = ComponentPropsWithoutRef<'button'> & {
-  customStyle?: 'primary'| 'secondary' | 'tertiary';
+  customStyle?: 'logo' | 'primary'| 'secondary' | 'tertiary';
   to?: string;
   href?: string;
 };
