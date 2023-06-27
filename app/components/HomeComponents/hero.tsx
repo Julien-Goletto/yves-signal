@@ -6,8 +6,8 @@ import { AnimatedBlob } from '@components/Backgrounds/animated-blob';
 
 export const HeroSection = () => {
   return (
-    <section id="hero" className='relative w-full flex flex-col gap-8 py-4 md:py-8 lg:py-12 xl:py-16'>
-      <div className='z-10 custom-container lg:flex-row'>
+    <section id="hero" className='custom-container relative gap-8 py-4 md:py-8 lg:py-12 xl:py-16'>
+      <div className='z-10 w-full flex flex-col md:flex-row md:justify-between'>
         <div className='w-full flex flex-col gap-4 md:flex-row md:items-center'>
           <Image 
             src="/assets/avatar_hello.png" 
@@ -21,12 +21,12 @@ export const HeroSection = () => {
               <span className='bg-clip-text text-transparent bg-gradient-to-r from-primary-medium to-secondary-medium'>Yves Signal</span>.
           </h1>
         </div>
-        <div className='w-full flex flex-col gap-8'>
+        <div className='w-full flex flex-col gap-8 md:items-end'>
           <div className='flex flex-col items-start gap-4 text-3xl'>
             <p>Bienvenue dans mon univers 🚀</p>
             <Button to="/presentation">Faire connaissance</Button>
           </div>
-          <p className='text-3xl'>
+          <p className='text-3xl md:text-right'>
             <span>{"Développement, culture, créations..."}</span>
             <br/>
             <span className='text-lg'>Un joyeux et curieux mélange, bien hétéroclite 😁</span>

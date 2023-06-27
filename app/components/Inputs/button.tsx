@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import Link from 'next/link';
 
 const commonStyle = `
-  px-6 py-3 flex gap-2 justify-center md:px-12 md:py-4 lg:px-18 lg:py-6 xl:px-24 xl:py-8
+  px-6 py-3 flex gap-2 justify-center md:px-12 md:py-4 lg:px-18 lg:py-6 xl:px-24
   rounded-full shadow-xl
   font-semibold text-center text-lg md:text-xl lg:text-2xl
   focus:outline-none focus:ring-4 focus:ring-offset-0 focus:scale-105 

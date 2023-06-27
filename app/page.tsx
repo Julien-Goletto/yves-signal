@@ -2,7 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import { getArticleSlugList, getArticleMetaBySlug } from '@/utils';
-import { HeroSection } from './components/HomeComponents/hero';
+import { HeroSection } from '@components/HomeComponents/hero';
+import { AxisSection } from '@components/HomeComponents/Axis/axis';
 
 const Home = async() => {
   const articlesSlugList = await getArticleSlugList();
@@ -18,6 +19,7 @@ const Home = async() => {
   return (
     <>
       <HeroSection />
+      <AxisSection />
       <section id="last-articles">{articleCards}</section>
     </>
   );

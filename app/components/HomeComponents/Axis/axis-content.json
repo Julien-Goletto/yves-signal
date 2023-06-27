@@ -1,0 +1,46 @@
+{
+  "title": "Trois axes pour suivre mon activité :",
+  "sections": [
+    {
+      "axe": "blog",
+      "title": "Le blog et ses articles ✍️",
+      "description": "Où je reviens sur les marqueurs importants qui m’ont inspirés plusieurs centaines de caractères.",
+      "buttons": [
+        {
+          "label": "Les articles",
+          "url": "/blog"
+        },
+        {
+          "label": "Les derniers articles",
+          "url": "#last_articles"
+        }
+      ]
+    },
+    {
+      "axe": "thread",
+      "title": "Mes fils 🧵",
+      "description": "Sur mes fils, les noeuds représentent ce que j’ai regardé, lu et ce à quoi j’ai joué au fil de mes pérégrinations culturelles chaotiques.",
+      "buttons": [
+        {
+          "label": "Les fils",
+          "url": "/fils"
+        },
+        {
+          "label": "Les derniers noeuds",
+          "url": "#last_nodes"
+        }
+      ]
+    },
+    {
+      "axe": "thread",
+      "title": "Mes créations 🔨",
+      "description": "Des projets numériques ou autrement plus concrets, des prototypes.",
+      "buttons": [
+        {
+          "label": "Mes créations",
+          "url": "/creations"
+        }
+      ]
+    }
+  ]
+}
