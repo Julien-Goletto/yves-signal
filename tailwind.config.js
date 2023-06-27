@@ -30,6 +30,9 @@ module.exports = {
         'books': '#FDFD96',
         'series': '#FF6961',
       },
+      screens: {
+        'xs': '450px',
+      },
     },
   },
   plugins: [],
