@@ -5,15 +5,14 @@ import { Card } from '@components/index';
 
 export const LastArticlesSection = async () => {
   const articlesSlugList = await getArticleSlugList();
-  const articlesListWithMeta = await Promise.all(articlesSlugList.map(async(slug) => (getArticleMetaBySlug(slug))));
+  const articlesMetaList = await Promise.all(articlesSlugList.map(async(slug) => (getArticleMetaBySlug(slug))));
 
   return (
-    <section id="last-articles">
+    <section id="last-articles" className='custom-container'>
+      <h2 className='w-full'>Les derniers articles ✍️</h2>
       {
-        articlesListWithMeta.map(({title, slug}) => (
-          <div key={title}>
-            <Card title={title} slug={slug}/>
-          </div>
+        articlesMetaList.map((articleMeta) => (
+            <Card {...articleMeta} key={articleMeta.slug}/>
         ))
       }
     </section>

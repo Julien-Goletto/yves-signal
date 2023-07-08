@@ -1,21 +1,12 @@
-import {z} from 'zod';
 import fs from 'node:fs';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import type { ReactNode } from 'react';
+import { ArticleSchema } from '@/types';
 
 const folder = 'articles/';
 
-const articleSchema = z.object({
-  meta: z.object(
-    {
-      slug: z.string(),
-      title: z.string(),
-      description: z.string(),
-      publishingDate: z.string(),
-    }),
-  content: z.custom<ReactNode>(),
-});
-
+/**
+ * @returns array of all articles slugs in article folder
+ */
 export const getArticleSlugList = () => {
   const files = fs.readdirSync(folder);
   const articlesList = files.filter((file) => file.endsWith('.mdx'));
@@ -23,26 +14,25 @@ export const getArticleSlugList = () => {
 };
 
 /**
- * Returns all written articles, extracting slugs from filenames.
- * Is synchronous because it's only called at build time.
- * Avoids to return other unexpected types of files
  * @param slug
- * @param onlyMeta when false returns all mdx content, else only the metadata
- * @returns 
+ * @returns the one and only complete article with the given slug
  */
-// const getArticleDataBySlug = async(slug: string, onlyMeta = false) => {
 export const getArticleDataBySlug = async(slug: string) => {
     const articlePath = `${folder}${slug}.mdx`;
     const rawArticleContent = fs.readFileSync(articlePath, 'utf8');
       const {frontmatter, content} = await compileMDX({source: rawArticleContent, options: {parseFrontmatter: true}});
-      const article = articleSchema.parse({meta: {...frontmatter, slug}, content});
+      const article = ArticleSchema.parse({meta: {...frontmatter, slug}, content});
       return article;
   };
 
+/**
+ * @param slug
+ * @returns the meta from the one and only article with the given slug
+ */
 export const getArticleMetaBySlug = async(slug: string) => {
     const articlePath = `${folder}${slug}.mdx`;
     const rawArticleContent = fs.readFileSync(articlePath, 'utf8');
       const {frontmatter} = await compileMDX({source: rawArticleContent, options: {parseFrontmatter: true}});
-      const meta = articleSchema.shape.meta.parse({...frontmatter, slug});
+      const meta = ArticleSchema.shape.meta.parse({...frontmatter, slug});
       return meta;
   };

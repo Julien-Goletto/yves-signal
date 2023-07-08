@@ -54,6 +54,7 @@ rules:
   no-self-compare: error
   no-sequences: error
   no-shadow-restricted-names: error
+  no-shadow: ignore
   no-sparse-arrays: error
   no-tabs: error
   no-template-curly-in-string: error

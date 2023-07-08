@@ -4,7 +4,6 @@ import { AxisSection, HeroSection, LastArticlesSection } from '@/app/HomeChunks'
 
 const Home = async() => {
   
-
   return (
     <>
       <HeroSection />

@@ -13,7 +13,7 @@ export const Header = () => {
 
   return(
     <header 
-      className={`${  headerStyle} ${isOpen && 'min-h-screen'} `}>
+      className={`${headerStyle} ${isOpen && 'min-h-screen'}`}>
         <div className='container mx-auto flex items-center justify-between'>
           <Logo />
           <MobileNavigation isOpen={isOpen} toggleBurgerMenu={toggleBurgerMenu}/>

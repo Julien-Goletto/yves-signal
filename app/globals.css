@@ -22,7 +22,7 @@
     @apply text-lg font-semibold;
   }
   .secondary {
-    @apply text-sm;
+    @apply text-sm font-light text-white/80;
   }
   .tertiary {
     @apply text-xs;
