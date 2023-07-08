@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Logo } from '@components/logo';
+import { Logo } from '@/app/components/Logo';
 import { MobileNavigation } from './mobile-navigation';
 import { DesktopNavigation } from './navigation';
 

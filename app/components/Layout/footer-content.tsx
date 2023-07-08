@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '../Inputs/button';
+import { Button } from '../Atomic/Inputs/Button';
 
 export const FooterContent = () => {
   return(

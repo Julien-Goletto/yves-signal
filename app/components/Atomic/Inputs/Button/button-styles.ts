@@ -1,7 +1,3 @@
-import React from 'react';
-import type { ComponentPropsWithoutRef } from 'react';
-import Link from 'next/link';
-
 const commonStyle = `
   px-6 py-3 flex gap-2 justify-center
   rounded-full shadow-xl
@@ -12,7 +8,7 @@ const commonStyle = `
   disabled:opacity-60
 `;
 
-const ButtonStyle = {
+export const buttonStyles = {
   primary: `${commonStyle} bg-gradient-to-r from-primary-medium to-secondary-medium
     shadow-primary-light/20 
     text-white
@@ -42,48 +38,4 @@ const ButtonStyle = {
     transition duration-150 hover:ease-out 
     disabled:opacity-60
     `,
-};
-
-type ButtonProperties = ComponentPropsWithoutRef<'button'> & {
-  customStyle?: 'logo' | 'primary'| 'secondary' | 'tertiary';
-  to?: string;
-  href?: string;
-};
-
-/**
- * @returns custom Button component
- * @param customStyle custom styles
- * @param to to specify for internal Link redirection
- * @param href for external links only
- */
-export const Button = ({ children, customStyle, onClick, to, href, disabled }: ButtonProperties) => {
-  const className = customStyle ? ButtonStyle[customStyle] : ButtonStyle.primary;
-
-  return (
-    <>
-      {to && (
-        <Link
-          className={className}
-          href={to}>
-          {children}
-        </Link>
-      )}
-      {href && (
-        <Link
-          className={className}
-          href={href}
-          target="_blank">
-          {children}
-        </Link>
-      )}
-      {!href && !to && (
-        <button
-          className={className}
-          onClick={onClick}
-          disabled={disabled}>
-          {children}
-        </button>
-      )}
-    </>
-  );
 };

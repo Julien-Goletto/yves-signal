@@ -1,5 +1,5 @@
 import React from 'react';
-import { WavyBackground } from '../Backgrounds/wavy-backgrounds';
+import { WavyBackground } from '../Backgrounds/wavy-background';
 import { FooterContent } from './footer-content';
 
 const footerStyle = `

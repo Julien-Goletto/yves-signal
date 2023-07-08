@@ -1,20 +1,15 @@
 import React from 'react';
-import Image from 'next/image';
-import { Button } from '@components/Inputs/button';
 
-import { AnimatedBlob } from '@components/Backgrounds/animated-blob';
+import { Button } from '@components/Atomic';
+import { AnimatedBlob } from '@components/Backgrounds';
+import { Avatar } from '@components/index';
 
 export const HeroSection = () => {
   return (
     <section id="hero" className='custom-container relative gap-8 py-4 md:py-8 lg:py-12 xl:py-16'>
       <div className='z-10 w-full flex flex-col md:flex-row md:justify-between'>
         <div className='w-full flex flex-col gap-4 md:flex-row md:items-center'>
-          <Image 
-            src="/assets/avatar_hello.png" 
-            alt="Yves Signal' avatar" 
-            width={200} 
-            height={200}
-            className='w-[100px] h-[100px] md:w-[200px] md:h-[200px]' />
+          <Avatar />
           <h1>
               <span className='text-3xl md:text-4xl'>{"Bonjour, je suis \n"}</span>
               <br/>

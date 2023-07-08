@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from '../../Inputs/button';
+import { Button } from '../../components/Atomic/Inputs/Button';
 import content from './axis-content.json';
 
 export const AxisSection = () => {
