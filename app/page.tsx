@@ -1,8 +1,14 @@
 import React from 'react';
 
-import { AxisSection, HeroSection, LastArticlesSection } from '@/app/HomeChunks';
+import { handleFetch } from '@/utils';
+import { SlugsListSchema } from '@/types/article';
+import { AxisSection, HeroSection, LastArticlesSection } from '@/app/chunks';
 
 const Home = async() => {
+
+  // To delete later
+  const myArticles = await handleFetch("articles/slugs", SlugsListSchema);
+  console.log(myArticles);
   
   return (
     <>

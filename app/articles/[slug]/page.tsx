@@ -1,14 +1,20 @@
 import React from 'react';
-import { getArticleDataBySlug } from '@/utils';
+import { getArticleDataBySlug, handleFetch } from '@/utils';
+import { ArticleSchema } from '@/types';
 
 const ArticlePage = async ({params}: {params: {slug: string}}) => {
-  const {meta, content} = await getArticleDataBySlug(params.slug);
+  const article = await getArticleDataBySlug(params.slug);
+  
+  // To delete later
+  const {meta, content} = await handleFetch(`articles/${params.slug}`, ArticleSchema);
+  console.log(content);
+
   return(
     <main>
       <h1>{params.slug}</h1>
     <section>
       <article>
-          {content}
+          {article.content}
       </article>
     </section>
     </main>

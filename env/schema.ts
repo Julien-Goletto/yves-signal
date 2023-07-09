@@ -8,6 +8,7 @@ export const serverSchema = z.object({
 
 export const clientSchema = z.object({
   NEXT_PUBLIC_TATA: z.string(),
+  NEXT_PUBLIC_INTERNAL_API_URL: z.string(),
 });
 
 type ServerSchema = {
@@ -29,4 +30,5 @@ export const serverEnvironment: ServerSchema = {
 };
 export const clientEnvironment: ClientSchema = {
   NEXT_PUBLIC_TATA: process.env.NEXT_PUBLIC_TATA,
+  NEXT_PUBLIC_INTERNAL_API_URL: process.env.NEXT_PUBLIC_INTERNAL_API_URL,
 };

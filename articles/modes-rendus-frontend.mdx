@@ -20,7 +20,7 @@ Un seul et unique objectif : améliorer l’expérience utilisateur en écourtan
 Pour les modes de rendu côté serveur, Next 12 pratiquait déjà l’hydratation pour ses modes de rendus Server Side, mais d’une façon “détournée” : dans un premier temps le serveur Next envoie au client une page HTML statique, puis dans un second temps avec un bon morceau de JSON, ajoute toute l’interactivité. Ce faisant, on essaie d’avoir le meilleur des rendus côté serveur et client, en évitant autant que possible l’attente devant une page vide et l’attente devant un “loader” hell, cache misère des SPAs.
 
 Avec l’avènement des server components de React 18, la génération server side s’enrichit d’un nouvel outil permettant d’oublier le “bricolage” de NextJS 12 avec une vraie solution native apportée par la dernière version. Les server components permettent de générer un morceau d’interface directement côté server. Les impacts sont nombreux et bénéfiques : on réduit la taille du bundle JS, on s’affranchit d’envoyer au client des dépendances lourdes, on peut créer un templating optimal bénéficier du streaming de composants, on peut fetcher directement les données nécessaires à la construction de notre composant au sein du composant lui-même, on peut utiliser des données sensibles sans les exposer au client…
- 
+
 À nous, développeur frontend, de définir quels morceaux de notre UI vont être des server components dont le HTML est généré par le server (et qui sont de fait statiques), et quels autres morceaux vont être des client components, des composants “réactifs”. 
 
 Pour se décider :

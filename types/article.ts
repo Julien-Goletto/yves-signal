@@ -13,4 +13,8 @@ export const ArticleSchema = z.object({
   content: z.custom<ReactNode>(),
 });
 
+export const SlugsListSchema = z.object({
+  articleSlugList: z.array(z.string()),
+});
+
 export type Article = z.infer<typeof ArticleSchema>;

@@ -17,7 +17,7 @@ export const getArticleSlugList = () => {
  * @param slug
  * @returns the one and only complete article with the given slug
  */
-export const getArticleDataBySlug = async(slug: string) => {
+export const getArticleDataBySlug = async (slug: string) => {
     const articlePath = `${folder}${slug}.mdx`;
     const rawArticleContent = fs.readFileSync(articlePath, 'utf8');
       const {frontmatter, content} = await compileMDX({source: rawArticleContent, options: {parseFrontmatter: true}});
@@ -29,7 +29,7 @@ export const getArticleDataBySlug = async(slug: string) => {
  * @param slug
  * @returns the meta from the one and only article with the given slug
  */
-export const getArticleMetaBySlug = async(slug: string) => {
+export const getArticleMetaBySlug = async (slug: string) => {
     const articlePath = `${folder}${slug}.mdx`;
     const rawArticleContent = fs.readFileSync(articlePath, 'utf8');
       const {frontmatter} = await compileMDX({source: rawArticleContent, options: {parseFrontmatter: true}});
