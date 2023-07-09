@@ -24,6 +24,8 @@
       "@env/*": ["./env/*"],
       "@articles/*": ["./articles/*"],
       "@utils/*": ["./utils/*"],
+      "@api/*": ["./api/*"],
+      "@app/*": ["./app/*"],
       "@components/*": ["./app/components/*"],
       "@hooks/*": ["./app/hooks/*"],
     }
